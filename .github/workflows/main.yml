@@ -1,4 +1,4 @@
-name: hello-world
+name: check
 on: push
 jobs:
   build:
@@ -6,5 +6,7 @@ jobs:
     steps:
       - name: checkout
         uses: "actions/checkout@v2"
-      - name: my-step
+      - name: run lint
         run: make lint
+      - name: run test
+        run: make test

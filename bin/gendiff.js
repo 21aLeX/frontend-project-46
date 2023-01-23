@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from "../node_modules/commander/esm.mjs";
-import { genDiff } from "../index.js";
+import { genDiff } from "../src/index.js";
 
 program
   .name("gendiff")
