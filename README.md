@@ -1,6 +1,7 @@
 ### Hexlet tests and linter status:
 
 [![Actions Status](https://github.com/21aLeX/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/21aLeX/frontend-project-46/actions)
+[![check](https://github.com/21aLeX/frontend-project-46/actions/workflows/main.yml/badge.svg)](https://github.com/21aLeX/frontend-project-46/actions/workflows/main.yml)
 
 Пример работы пакета:
 
