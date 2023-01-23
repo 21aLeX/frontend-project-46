@@ -9,7 +9,7 @@ jobs:
       - name: run lint
         run: make lint
       - name: test
-        uses: paambaati/codeclimate-action@v3.2.0
+        run: test
         # Add Code Climate secret key
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.climate }}
