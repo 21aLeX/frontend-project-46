@@ -1,10 +1,11 @@
 import { readFileSync } from "node:fs";
-import {  dirname } from "path";
+import path from "path";
 import _ from "lodash";
 
 const getDiff = (obj1, obj2) => {
   const keysAll = [...Object.keys(obj1), ...Object.keys(obj2)];
-  const keys = _.sortBy([...new Set(keysAll)]);
+  const resultKey = [...new Set(keysAll)];
+  const keys = _.sortBy(resultKey);
   return keys.reduce((acc, key) => {
     const value1 = obj1[key];
     const value2 = obj2[key];
@@ -21,20 +22,12 @@ const getDiff = (obj1, obj2) => {
   }, []);
 };
 export function genDiff(route1, route2) {
-  // const way1 = path.resolve(route1);
-  // const way2 = path.resolve(route2);
-  const __dirname = dirname(route2);
-  console.log(__dirname);
-  let fileContent = readFileSync(route1, "utf8");
+  const way1 = path.resolve(route1);
+  const way2 = path.resolve(route2);
+  let fileContent = readFileSync(way1, "utf8");
   const obj1 = JSON.parse(fileContent);
-  let fileContent2 = readFileSync(route2, "utf8");
+  let fileContent2 = readFileSync(way2, "utf8");
   const obj2 = JSON.parse(fileContent2);
-  // if (
-  //   route1.split(".").pop() === "json" &&
-  //   route2.split(".").pop() === "json"
-  // ) {
   const result = `{\n${getDiff(obj1, obj2).join("\n")}\n}`;
   return result;
-  // }
-  // return "Error, these are not json files";
 }
