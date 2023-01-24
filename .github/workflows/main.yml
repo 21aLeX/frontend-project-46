@@ -5,17 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
-      - name: node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-          cache: "npm"
-      - run: npm ci
-      - run: npm test
+        uses: actions/checkout@v3
         # Add Code Climate secret key
       - name: Test & publish code coverage
-        uses: 21aLeX/frontend-project-46@main
+        # uses: 21aLeX/frontend-project-46@main
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
