@@ -27,12 +27,12 @@ export function genDiff(route1, route2) {
   const obj1 = JSON.parse(fileContent);
   let fileContent2 = readFileSync(way2, "utf8");
   const obj2 = JSON.parse(fileContent2);
-  if (
-    route1.split(".").pop() === "json" &&
-    route2.split(".").pop() === "json"
-  ) {
-    const result = `{\n${getDiff(obj1, obj2).join("\n")}\n}`;
-    return result;
-  }
-  return "Error, these are not json files";
+  // if (
+  //   route1.split(".").pop() === "json" &&
+  //   route2.split(".").pop() === "json"
+  // ) {
+  const result = `{\n${getDiff(obj1, obj2).join("\n")}\n}`;
+  return result;
+  // }
+  // return "Error, these are not json files";
 }
