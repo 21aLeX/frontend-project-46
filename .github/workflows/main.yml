@@ -8,11 +8,11 @@ jobs:
         uses: "actions/checkout@v2"
       - name: run lint
         run: make lint
-      - name: test
-        run: test
         # Add Code Climate secret key
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.0.0 
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.climate }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CLIMATE }}
         with:
-          coverageCommand: make test
-          debug: true
+           coverageCommand: make test-coverage
+           debug: true
