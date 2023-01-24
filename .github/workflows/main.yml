@@ -4,12 +4,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: run lint
-        run: make lint
-      -name: install lodash
-        run: make lodash
       - name: checkout
         uses: actions/checkout@v3
+      - name: run lint
+        run: make lint
+      - name: install
+        run: npm install
         # Add Code Climate secret key
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
