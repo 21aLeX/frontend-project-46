@@ -21,11 +21,11 @@ const getDiff = (obj1, obj2) => {
   }, []);
 };
 export function genDiff(route1, route2) {
-  const way1 = path.resolve(route1);
-  const way2 = path.resolve(route2);
-  let fileContent = readFileSync(way1, "utf8");
+  // const way1 = path.resolve(route1);
+  // const way2 = path.resolve(route2);
+  let fileContent = readFileSync(route1, "utf8");
   const obj1 = JSON.parse(fileContent);
-  let fileContent2 = readFileSync(way2, "utf8");
+  let fileContent2 = readFileSync(route2, "utf8");
   const obj2 = JSON.parse(fileContent2);
   // if (
   //   route1.split(".").pop() === "json" &&
