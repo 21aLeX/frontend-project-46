@@ -10,7 +10,7 @@ jobs:
         run: make lint
         # Add Code Climate secret key
       - name: Test & publish code coverage
-        uses: frontend-project-46/codeclimate-action@v3.0.0 
+        uses: actions/codeclimate-action@v3.0.0 
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
