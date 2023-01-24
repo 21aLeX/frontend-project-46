@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import path from "path";
+import {  dirname } from "path";
 import _ from "lodash";
 
 const getDiff = (obj1, obj2) => {
@@ -23,6 +23,8 @@ const getDiff = (obj1, obj2) => {
 export function genDiff(route1, route2) {
   // const way1 = path.resolve(route1);
   // const way2 = path.resolve(route2);
+  const __dirname = dirname(route2);
+  console.log(__dirname);
   let fileContent = readFileSync(route1, "utf8");
   const obj1 = JSON.parse(fileContent);
   let fileContent2 = readFileSync(route2, "utf8");

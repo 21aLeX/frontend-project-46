@@ -10,6 +10,6 @@ const result =
  + verbose: true\n\
 }";
 test("reverse", () => {
-  expect(genDiff("../file1.json", "../file2.json")).toEqual(result);
+  expect(genDiff("file1.json", "file2.json")).toEqual(result);
   // expect(genDiff()).toEqual("Error, these are not json files");
 });
