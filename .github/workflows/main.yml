@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: "actions/checkout@v3"
+        uses: actions/checkout@v3
       - name: run lint
         run: make lint
         # Add Code Climate secret key
@@ -14,5 +14,5 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-           coverageCommand: make test-coverage
-           debug: true
+          coverageCommand: make test-coverage
+          debug: true
