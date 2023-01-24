@@ -5,9 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3
-      - name: run lint
-        run: make lint
+        uses: actions/checkout@v2
+      - name: node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "npm"
+      - run: npm ci
+      - run: npm test
         # Add Code Climate secret key
       - name: Test & publish code coverage
         uses: 21aLeX/frontend-project-46@main
@@ -16,3 +21,5 @@ jobs:
         with:
           coverageCommand: make test-coverage
           debug: true
+      - name: run lint
+        run: make lint
