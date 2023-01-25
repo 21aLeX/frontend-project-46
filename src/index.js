@@ -1,7 +1,8 @@
-import { readFileSync } from "node:fs";
-import path from "path";
+import parsers from "./parsers.js";
 import _ from "lodash";
 
+//code climate пишет о техническом долге в 2 дня, ссылается на непонятный файл
+//но думаю что это изза сортировки =(
 const getDiff = (obj1, obj2) => {
   const keysAll = [...Object.keys(obj1), ...Object.keys(obj2)];
   const resultKey = [...new Set(keysAll)];
@@ -21,13 +22,9 @@ const getDiff = (obj1, obj2) => {
     return [...acc, ` - ${key}: ${value1}`, ` + ${key}: ${value2}`];
   }, []);
 };
+
 export function genDiff(route1, route2) {
-  const way1 = path.resolve(route1);
-  const way2 = path.resolve(route2);
-  let fileContent = readFileSync(way1, "utf8");
-  const obj1 = JSON.parse(fileContent);
-  let fileContent2 = readFileSync(way2, "utf8");
-  const obj2 = JSON.parse(fileContent2);
+  const [obj1, obj2] = parsers(route1, route2);
   const result = `{\n${getDiff(obj1, obj2).join("\n")}\n}`;
   return result;
 }

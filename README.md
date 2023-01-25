@@ -8,3 +8,7 @@
 Пример работы пакета:
 
 [![asciicast](https://asciinema.org/a/g9KawgMZSIHrfkbv1EosdRt1b.svg)](https://asciinema.org/a/g9KawgMZSIHrfkbv1EosdRt1b)
+
+Пример работы с yml и json:
+
+[![asciicast](https://asciinema.org/a/M6vXZWYwpoq1gKP9qDV1alwSm.svg)](https://asciinema.org/a/M6vXZWYwpoq1gKP9qDV1alwSm)

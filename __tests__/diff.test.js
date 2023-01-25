@@ -1,7 +1,5 @@
 import { genDiff } from "../src/index.js";
-import { dirname } from "path";
 import { fileURLToPath } from "url";
-// import { dirname } from "path";
 import path from "path";
 
 const result =
@@ -29,26 +27,18 @@ const result4 =
   "{\n\
 \n\
 }";
+//избыточно ли делать отдельно тесты на json и yml?
+//а так же на пустые "обьекты"?(как у меня реализованно)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const file1 = path.join(__dirname, "..", "__fixtures__", "test1.json");
 test("reverse", () => {
   expect(genDiff("file1.json", "file2.json")).toEqual(result);
+  expect(genDiff("file1.yml", "file2.yaml")).toEqual(result);
+  expect(genDiff("file1.json", "file2.yaml")).toEqual(result);
+  expect(genDiff(file1, "file2.json")).toEqual(result2);
+  expect(genDiff("file2.json", file1)).toEqual(result3);
   expect(
-    genDiff(
-      path.join(__dirname, "..", "__fixtures__", "test1.json"),
-      "file2.json"
-    )
-  ).toEqual(result2);
-  expect(
-    genDiff(
-      "file2.json",
-      path.join(__dirname, "..", "__fixtures__", "test1.json")
-    )
-  ).toEqual(result3);
-  expect(
-    genDiff(
-      path.join(__dirname, "..", "__fixtures__", "test2.json"),
-      path.join(__dirname, "..", "__fixtures__", "test1.json")
-    )
+    genDiff(path.join(__dirname, "..", "__fixtures__", "test2.json"), file1)
   ).toEqual(result4);
 });
