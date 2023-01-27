@@ -12,3 +12,7 @@
 Пример работы с yml и json:
 
 [![asciicast](https://asciinema.org/a/M6vXZWYwpoq1gKP9qDV1alwSm.svg)](https://asciinema.org/a/M6vXZWYwpoq1gKP9qDV1alwSm)
+
+Пример работы с форматером:
+
+[![asciicast](https://asciinema.org/a/FKh6lTROiK64G09eLmBfw1I72.svg)](https://asciinema.org/a/FKh6lTROiK64G09eLmBfw1I72)

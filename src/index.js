@@ -1,30 +1,62 @@
 import parsers from "./parsers.js";
 import _ from "lodash";
+import stylish from "./stylish.js";
 
 //code climate пишет о техническом долге в 2 дня, ссылается на непонятный файл
 //но думаю что это изза сортировки =(
 const getDiff = (obj1, obj2) => {
-  const keysAll = [...Object.keys(obj1), ...Object.keys(obj2)];
-  const resultKey = [...new Set(keysAll)];
-  const keys = _.sortBy(resultKey);
-  return keys.reduce((acc, key) => {
-    const value1 = obj1[key];
-    const value2 = obj2[key];
-    if (value1 === value2) {
-      return [...acc, `   ${key}: ${value1}`];
-    }
-    if (value1 === undefined) {
-      return [...acc, ` + ${key}: ${value2}`];
-    }
-    if (value2 === undefined) {
-      return [...acc, ` - ${key}: ${value1}`];
-    }
-    return [...acc, ` - ${key}: ${value1}`, ` + ${key}: ${value2}`];
-  }, []);
+  const iter = (value1Iter, value2Iter) => {
+    const keysAll = [...Object.keys(value1Iter), ...Object.keys(value2Iter)];
+    const resultKey = [...new Set(keysAll)];
+    const keys = _.sortBy(resultKey);
+    return keys.reduce((acc, key) => {
+      const value1 = value1Iter[key];
+      const value2 = value2Iter[key];
+      if (
+        _.isObject(value1) &&
+        _.isObject(value2) &&
+        value1 !== null &&
+        value2 !== null
+      ) {
+        return { ...acc, [key]: iter(value1, value2) };
+      }
+      if (value1 === value2) {
+        return { ...acc, [key]: value1 };
+      }
+      const newKey1 = `- ${key}`;
+      const newKey2 = `+ ${key}`;
+      if (value1 === undefined) {
+        return {
+          ...acc,
+          [newKey2]:
+            !_.isObject(value2) || value2 === null
+              ? value2
+              : _.cloneDeep(value2),
+        };
+      }
+      if (value2 === undefined) {
+        return {
+          ...acc,
+          [newKey1]:
+            !_.isObject(value1) || value1 === null
+              ? value1
+              : _.cloneDeep(value1),
+        };
+      }
+      return {
+        ...acc,
+        [newKey1]:
+          !_.isObject(value1) || value1 === null ? value1 : _.cloneDeep(value1),
+        [newKey2]:
+          !_.isObject(value2) || value2 === null ? value2 : _.cloneDeep(value2),
+      };
+    }, {});
+  };
+  return iter(obj1, obj2, 1);
 };
 
-export function genDiff(route1, route2) {
+export function genDiff(route1, route2, formater = stylish) {
   const [obj1, obj2] = parsers(route1, route2);
-  const result = `{\n${getDiff(obj1, obj2).join("\n")}\n}`;
+  const result = formater(getDiff(obj1, obj2));
   return result;
 }

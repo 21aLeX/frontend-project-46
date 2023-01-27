@@ -11,6 +11,7 @@ export default (...route) => {
   return route.map((item) => {
     const content = getContent(item);
     const exstension = path.extname(item);
+      // console.log(yaml.load(content));
     switch (exstension) {
       //json, лучше перенести в дефолт?
       case ".json":
