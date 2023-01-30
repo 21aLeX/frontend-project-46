@@ -1,6 +1,7 @@
 import { genDiff } from "../src/index.js";
 import { fileURLToPath } from "url";
 import path from "path";
+import plain from "../src/formatters/plain.js";
 
 const result =
   "{\n\
@@ -47,6 +48,18 @@ const result =
         fee: 100500\n\
     }\n\
 }";
+const result2 =
+  "Property 'common.follow' was added with value: false\n\
+Property 'common.setting2' was removed\n\
+Property 'common.setting3' was updated. From true to null\n\
+Property 'common.setting4' was added with value: 'blah blah'\n\
+Property 'common.setting5' was added with value: [complex value]\n\
+Property 'common.setting6.doge.wow' was updated. From '' to 'so much'\n\
+Property 'common.setting6.ops' was added with value: 'vops'\n\
+Property 'group1.baz' was updated. From 'bas' to 'bars'\n\
+Property 'group1.nest' was updated. From [complex value] to 'str'\n\
+Property 'group2' was removed\n\
+Property 'group3' was added with value: [complex value]";
 //избыточно ли делать отдельно тесты на json и yml?
 //а так же на пустые "обьекты"?
 const __filename = fileURLToPath(import.meta.url);
@@ -54,6 +67,9 @@ const __dirname = path.dirname(__filename);
 const file2 = path.join(__dirname, "..", "__fixtures__", "file2.yaml");
 test("reverse", () => {
   expect(genDiff("file1.json", "file2.yaml")).toEqual(result);
+});
+test("reverse", () => {
+  expect(genDiff("file1.json", "file2.yaml", "plain")).toEqual(result2);
 });
 test("reverse", () => {
   expect(genDiff("file1.json", file2)).toEqual(result);

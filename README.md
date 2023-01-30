@@ -9,10 +9,14 @@
 
 [![asciicast](https://asciinema.org/a/g9KawgMZSIHrfkbv1EosdRt1b.svg)](https://asciinema.org/a/g9KawgMZSIHrfkbv1EosdRt1b)
 
-Пример работы с yml и json:
+Пример работы с _yml_ и _json_ форматами:
 
 [![asciicast](https://asciinema.org/a/M6vXZWYwpoq1gKP9qDV1alwSm.svg)](https://asciinema.org/a/M6vXZWYwpoq1gKP9qDV1alwSm)
 
-Пример работы с форматером:
+Пример работы с форматером _stylish_:
 
 [![asciicast](https://asciinema.org/a/FKh6lTROiK64G09eLmBfw1I72.svg)](https://asciinema.org/a/FKh6lTROiK64G09eLmBfw1I72)
+
+Пример работы с форматером _plain_:
+
+[![asciicast](https://asciinema.org/a/i9ZakOZhuiERRtQgtEwag00Cx.svg)](https://asciinema.org/a/i9ZakOZhuiERRtQgtEwag00Cx)

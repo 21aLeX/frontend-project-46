@@ -1,6 +1,6 @@
-import parsers from "./parsers.js";
+import parse from "./parse.js";
 import _ from "lodash";
-import stylish from "./stylish.js";
+import formatters from "./formatters/index.js";
 
 //code climate пишет о техническом долге в 2 дня, ссылается на непонятный файл
 //но думаю что это изза сортировки =(
@@ -55,8 +55,11 @@ const getDiff = (obj1, obj2) => {
   return iter(obj1, obj2, 1);
 };
 
-export function genDiff(route1, route2, formater = stylish) {
-  const [obj1, obj2] = parsers(route1, route2);
-  const result = formater(getDiff(obj1, obj2));
+export function genDiff(route1, route2, nameFormatter) {
+  const [obj1, obj2] = parse(route1, route2);
+  //правильно ли, что когда прийдет ошибка, делать так?
+  // или нужно ее здесь как то обработать?
+  const formatter = formatters(nameFormatter);
+  const result = formatter(getDiff(obj1, obj2));
   return result;
 }
