@@ -4,6 +4,8 @@ import formatters from "./formatters/index.js";
 
 //code climate пишет о техническом долге в 2 дня, ссылается на непонятный файл
 //но думаю что это изза сортировки =(
+//нужно ли выносить функцию вычисления оличия в отдельный модуль?
+// Хотя в первых заданиях сказано чтоб много файлов не плодили.
 const getDiff = (obj1, obj2) => {
   const iter = (value1Iter, value2Iter) => {
     const keysAll = [...Object.keys(value1Iter), ...Object.keys(value2Iter)];
@@ -57,9 +59,6 @@ const getDiff = (obj1, obj2) => {
 
 export function genDiff(route1, route2, nameFormatter) {
   const [obj1, obj2] = parse(route1, route2);
-  //правильно ли, что когда прийдет ошибка, делать так?
-  // или нужно ее здесь как то обработать?
-  const formatter = formatters(nameFormatter);
-  const result = formatter(getDiff(obj1, obj2));
-  return result;
+  const data = getDiff(obj1, obj2);
+  return formatters(data, nameFormatter);
 }

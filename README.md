@@ -20,3 +20,7 @@
 Пример работы с форматером _plain_:
 
 [![asciicast](https://asciinema.org/a/i9ZakOZhuiERRtQgtEwag00Cx.svg)](https://asciinema.org/a/i9ZakOZhuiERRtQgtEwag00Cx)
+
+Пример работы с форматером _json_:
+
+[![asciicast](https://asciinema.org/a/9WDcltwtqZzbTfDIKChQy3KFF.svg)](https://asciinema.org/a/9WDcltwtqZzbTfDIKChQy3KFF)
