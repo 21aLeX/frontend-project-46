@@ -34,9 +34,8 @@ const plain = (value) => {
         } else if (key.startsWith("-")) {
           result = `${result}'${newWay.join(".")}' was removed`;
         } else if (key.startsWith("+")) {
-          result = `${result}'${newWay.join(
-            "."
-          )}' was added with value: ${getContent(currentValue[key])}`;
+          result = `${result}'${newWay.join(".")}
+          ' was added with value: ${getContent(currentValue[key])}`;
         }
       } else {
         result = iter(val, [...way, key]);
