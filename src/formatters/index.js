@@ -1,6 +1,6 @@
-import json from './json.js';
-import plain from './plain.js';
-import stylish from './stylish.js';
+import json from "./json.js";
+import plain from "./plain.js";
+import stylish from "./stylish.js";
 // честно, увидела в других репозиториях что получают обьект с вложенным свойством type и детей
 // как делали в заданиях по модулю (tree)
 // я про это совсем забыла, поэтому сделала через + - добавление к ключам
@@ -10,7 +10,7 @@ const formatters = { plain: plain, stylish: stylish, json: json };
 export default (data, nameFormatter) => {
   if (
     nameFormatter !== undefined &&
-    !formatters.hasOwnProperty(nameFormatter)
+    !Object.prototype.hasOwnProperty.call(formatters, nameFormatter)
   ) {
     throw new Error(`Unknown format - ${nameFormatter}!`);
   }
