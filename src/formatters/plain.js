@@ -15,13 +15,13 @@ const plain = (value) => {
       switch (val.type) {
         case 'added':
           return `Property '${tree}' was added with value: ${getContent(
-            val.value,
+            val.value
           )}`;
         case 'deleted':
           return `Property '${tree}' was removed`;
         case 'changed':
           return `Property '${tree}' was updated. From ${getContent(
-            val.value1,
+            val.value1
           )} to ${getContent(val.value2)}`;
         case 'nested':
           return iter(val.children, newWay);

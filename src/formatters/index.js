@@ -9,8 +9,8 @@ import stylish from './stylish.js';
 const formatters = { plain, stylish, json };
 export default (data, nameFormatter) => {
   if (
-    nameFormatter !== undefined
-    && !Object.prototype.hasOwnProperty.call(formatters, nameFormatter)
+    nameFormatter !== undefined &&
+    !Object.prototype.hasOwnProperty.call(formatters, nameFormatter)
   ) {
     throw new Error(`Unknown format - ${nameFormatter}!`);
   }
