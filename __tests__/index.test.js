@@ -15,7 +15,7 @@ const getCorrectResult = (file) =>
 // только у меня возникли проблемы с возвратом каретки, поэтому пришлось еще в getCorrectResult добавить реплейс
 test("default stylish && get path", () => {
   const result = getCorrectResult(getFixture("result.stylish.txt"));
-  expect(genDiff("file1.json", getFixture("file2.yaml"))).toEqual(result);
+  expect(genDiff("file1.json", getFixture("file2.yml"))).toEqual(result);
 });
 test("plain", () => {
   const result2 = getCorrectResult(getFixture("result.plain.txt"));
@@ -25,13 +25,13 @@ test("json", () => {
   const result3 = getCorrectResult(getFixture("result.json.txt"));
   expect(genDiff("file1.json", "file2.yaml", "json")).toEqual(result3);
 });
-// test("incorrect formatter", () => {
-//   expect(() => {
-//     genDiff("file1.json", "file2.yaml", "jso");
-//   }).toThrow();
-// });
-// test("incorrect extension", () => {
-//   expect(() => {
-//     genDiff("file1.json", "file2.ya");
-//   }).toThrow();
-// });
+test("incorrect formatter", () => {
+  expect(() => {
+    genDiff("file1.json", "file2.yaml", "jso");
+  }).toThrow();
+});
+test("incorrect extension", () => {
+  expect(() => {
+    genDiff("file1.json", "file2.ya");
+  }).toThrow();
+});

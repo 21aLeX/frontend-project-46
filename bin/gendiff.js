@@ -13,10 +13,6 @@ program
   .argument("<filepath1>")
   .argument("<filepath2>")
   .action(function (filepath1, filepath2) {
-    try {
-      console.log(genDiff(filepath1, filepath2, this.opts().format));
-    } catch (err) {
-      console.log(err);
-    }
+    console.log(genDiff(filepath1, filepath2, this.opts().format));
   });
 program.parse();
