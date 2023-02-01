@@ -6,7 +6,7 @@ import getDifference from './getDifference.js';
 // указывая на сортировку (видимо из лодаш)
 // и на то что функции длинее 25 строк, хотя строки выравнивает автоматом преттир
 export default (route1, route2, nameFormatter) => {
-  const [tree1, tree2] = parse(route1, route2);
+  const [tree1, tree2] = parse([route1, route2]);
   const data = getDifference(tree1, tree2);
   return formatters(data, nameFormatter);
 };
