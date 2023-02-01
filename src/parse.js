@@ -11,7 +11,7 @@ export default (...route) =>
   route.map((item) => {
     const exstension = path.extname(item);
     switch (exstension) {
-    // то что по дефолту ошибку пробрасывать, тоже не сама догадалась(
+      // то что по дефолту ошибку пробрасывать, тоже не сама догадалась(
       case '.json':
         return JSON.parse(getContent(item));
       case '.yml':
