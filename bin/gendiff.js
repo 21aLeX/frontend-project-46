@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { program } from "../node_modules/commander/esm.mjs";
+import { program } from "commander";
 import genDiff from "../src/index.js";
 
 program
@@ -12,11 +12,7 @@ program
   .option("-f, --format [type]", "output format (default: 'stylish')")
   .argument("<filepath1>")
   .argument("<filepath2>")
-  .action(function (filepath1, filepath2) {
-    try {
-      console.log(genDiff(filepath1, filepath2, this.opts().format));
-    } catch (err) {
-      console.log(err);
-    }
-  })
+  .action((filepath1, filepath2) =>
+    console.log(genDiff(filepath1, filepath2, program.opts().format))
+  )
   .parse();
