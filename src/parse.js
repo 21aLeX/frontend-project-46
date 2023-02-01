@@ -7,7 +7,7 @@ const getContent = (route) => {
   const fileContent = readFileSync(way, 'utf8');
   return fileContent;
 };
-export default (...route) => route.map((item) => {
+export default (route) => route.map((item) => {
   const exstension = path.extname(item);
   switch (exstension) {
     // то что по дефолту ошибку пробрасывать, тоже не сама догадалась(
