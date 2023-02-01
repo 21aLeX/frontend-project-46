@@ -1,6 +1,6 @@
-import parse from "./parse.js";
-import formatters from "./formatters/index.js";
-import getDifference from "./getDifference.js";
+import parse from './parse.js';
+import formatters from './formatters/index.js';
+import getDifference from './getDifference.js';
 
 // так же код коверэйдж говорит о техническом долге в два дня,
 // указывая на сортировку (видимо из лодаш)
