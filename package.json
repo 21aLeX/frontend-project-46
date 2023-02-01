@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "Нахождение различий между двумя json файлами",
+  "description": "Нахождение различий между двумя файлами",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },

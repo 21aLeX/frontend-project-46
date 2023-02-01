@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from "../node_modules/commander/esm.mjs";
-import genDiff from "./src/index.js";
+import genDiff from "../src/index.js";
 
 program
   .name("gendiff")
@@ -14,5 +14,5 @@ program
   .argument("<filepath2>")
   .action(function (filepath1, filepath2) {
     console.log(genDiff(filepath1, filepath2, this.opts().format));
-  });
-program.parse();
+  })
+  .parse();
