@@ -1,10 +1,10 @@
-import path from 'path';
-import yaml from 'js-yaml';
-import { readFileSync } from 'fs';
+import path from "path";
+import yaml from "js-yaml";
+import { readFileSync } from "fs";
 
 const getContent = (route) => {
   const way = path.resolve(route);
-  const fileContent = readFileSync(way, 'utf8');
+  const fileContent = readFileSync(way, "utf8");
   return fileContent;
 };
 export default (...route) =>
@@ -12,14 +12,14 @@ export default (...route) =>
     const exstension = path.extname(item);
     switch (exstension) {
       // то что по дефолту ошибку пробрасывать, тоже не сама догадалась(
-      case '.json':
+      case ".json":
         return JSON.parse(getContent(item));
-      case '.yml':
-      case '.yaml':
+      case ".yml":
+      case ".yaml":
         return yaml.load(getContent(item));
       default:
         throw new Error(
-          `I don't know how to deal with files with extension ${exstension}`,
+          `I don't know how to deal with files with extension ${exstension}`
         );
     }
   });
