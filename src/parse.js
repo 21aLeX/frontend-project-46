@@ -9,17 +9,18 @@ const getContent = (route) => {
 };
 export default (...route) => {
   return route.map((item) => {
-    const content = getContent(item);
     const exstension = path.extname(item);
     switch (exstension) {
-      //json, лучше перенести в дефолт?
-      //или по дефолту ошибку пробрасывать?
+      //то что по дефолту ошибку пробрасывать, тоже не сама догадалась(
       case ".json":
-        return JSON.parse(content);
+        return JSON.parse(getContent(item));
       case ".yml":
       case ".yaml":
-        return yaml.load(content);
-      // default:
+        return yaml.load(getContent(item));
+      default:
+        throw new Error(
+          `I don't know how to deal with files with extension ${exstension}`
+        );
     }
   });
 };

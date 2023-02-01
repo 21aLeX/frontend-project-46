@@ -1,3 +1,1 @@
-export default (value) => {
-  return JSON.stringify(value);
-};
+export default (data) => JSON.stringify(data);
