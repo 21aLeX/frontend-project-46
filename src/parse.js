@@ -18,8 +18,6 @@ export default (...route) =>
       case '.yaml':
         return yaml.load(getContent(item));
       default:
-        throw new Error(
-          `I don't know how to deal with files with extension ${exstension}`
-        );
+        throw new Error(`I don't know how to deal with files with extension ${exstension}`);
     }
   });
