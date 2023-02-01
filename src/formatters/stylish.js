@@ -7,8 +7,7 @@ const signs = {
   deleted: '- ',
   unchanged: '  ',
 };
-const getIndent = (depth) =>
-  replacer.repeat(depth * spacesCount - 2);
+const getIndent = (depth) => replacer.repeat(depth * spacesCount - 2);
 const stylish = (value) => {
   const iter = (currentValue, depth) => {
     if (!_.isObject(currentValue)) {

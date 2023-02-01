@@ -5,10 +5,8 @@ import genDiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const getFixture = (nameFile) =>
-  path.join(__dirname, '..', '__fixtures__', nameFile);
-const getCorrectResult = (file) =>
-  readFileSync(file, 'utf8').replace(/\r/g, '');
+const getFixture = (nameFile) => path.join(__dirname, '..', '__fixtures__', nameFile);
+const getCorrectResult = (file) => readFileSync(file, 'utf8').replace(/\r/g, '');
 // избыточно ли делать отдельно тесты на json и yml?
 // а так же на пустые "обьекты"?
 // так же увидела что кто то вынес результаты для сравнения в файлы, и сделала так же
