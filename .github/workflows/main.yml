@@ -6,10 +6,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: run lint
-        run: make lint
       - name: install
         run: npm install
+      - name: run lint
+        run: make lint
         # Add Code Climate secret key
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
