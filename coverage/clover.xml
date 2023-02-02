@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675247127241" clover="3.2.0">
-  <project timestamp="1675247127242" name="All files">
-    <metrics statements="170" coveredstatements="170" conditionals="51" coveredconditionals="51" methods="12" coveredmethods="12" elements="233" coveredelements="233" complexity="0" loc="170" ncloc="170" packages="2" files="7" classes="7"/>
+<coverage generated="1675268602007" clover="3.2.0">
+  <project timestamp="1675268602007" name="All files">
+    <metrics statements="168" coveredstatements="167" conditionals="51" coveredconditionals="50" methods="12" coveredmethods="12" elements="231" coveredelements="229" complexity="0" loc="168" ncloc="168" packages="2" files="7" classes="7"/>
     <package name="src">
-      <metrics statements="65" coveredstatements="65" conditionals="19" coveredconditionals="19" methods="4" coveredmethods="4"/>
+      <metrics statements="62" coveredstatements="61" conditionals="19" coveredconditionals="18" methods="4" coveredmethods="4"/>
       <file name="getDifference.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/getDifference.js">
         <metrics statements="28" coveredstatements="28" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -36,7 +36,7 @@
         <line num="28" count="1" type="stmt"/>
       </file>
       <file name="index.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/index.js">
-        <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -44,43 +44,40 @@
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
-        <line num="11" count="5" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
       </file>
       <file name="parse.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/parse.js">
-        <metrics statements="26" coveredstatements="26" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
+        <metrics statements="13" coveredstatements="12" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="9" type="stmt"/>
-        <line num="7" count="9" type="stmt"/>
-        <line num="8" count="9" type="stmt"/>
-        <line num="9" count="9" type="stmt"/>
-        <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="10" type="stmt"/>
-        <line num="13" count="10" type="stmt"/>
-        <line num="14" count="10" type="stmt"/>
-        <line num="15" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="16" count="5" type="stmt"/>
-        <line num="17" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="20" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="10" type="stmt"/>
-        <line num="25" count="5" type="stmt"/>
-        <line num="26" count="5" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="8" type="cond" truecount="0" falsecount="1"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.formatters">
-      <metrics statements="105" coveredstatements="105" conditionals="32" coveredconditionals="32" methods="8" coveredmethods="8"/>
+      <metrics statements="106" coveredstatements="106" conditionals="32" coveredconditionals="32" methods="8" coveredmethods="8"/>
       <file name="index.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/formatters/index.js">
         <metrics statements="20" coveredstatements="20" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -94,8 +91,8 @@
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="3" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="14" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -149,7 +146,7 @@
         <line num="37" count="1" type="stmt"/>
       </file>
       <file name="stylish.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/formatters/stylish.js">
-        <metrics statements="47" coveredstatements="47" conditionals="12" coveredconditionals="12" methods="3" coveredmethods="3"/>
+        <metrics statements="48" coveredstatements="48" conditionals="12" coveredconditionals="12" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -158,45 +155,46 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="32" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="20" type="stmt"/>
-        <line num="14" count="20" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="12" type="cond" truecount="1" falsecount="0"/>
-        <line num="16" count="27" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="32" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="20" type="stmt"/>
+        <line num="15" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="12" type="cond" truecount="1" falsecount="0"/>
         <line num="17" count="27" type="stmt"/>
-        <line num="18" count="27" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="27" type="stmt"/>
         <line num="19" count="27" type="cond" truecount="1" falsecount="0"/>
         <line num="20" count="27" type="cond" truecount="1" falsecount="0"/>
-        <line num="21" count="10" type="stmt"/>
+        <line num="21" count="27" type="cond" truecount="1" falsecount="0"/>
         <line num="22" count="10" type="stmt"/>
         <line num="23" count="10" type="stmt"/>
         <line num="24" count="10" type="stmt"/>
-        <line num="25" count="27" type="cond" truecount="1" falsecount="0"/>
-        <line num="26" count="4" type="stmt"/>
-        <line num="27" count="27" type="cond" truecount="1" falsecount="0"/>
-        <line num="28" count="4" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
+        <line num="26" count="27" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="28" count="27" type="cond" truecount="1" falsecount="0"/>
         <line num="29" count="4" type="stmt"/>
         <line num="30" count="4" type="stmt"/>
         <line num="31" count="4" type="stmt"/>
-        <line num="32" count="27" type="cond" truecount="1" falsecount="0"/>
-        <line num="33" count="9" type="stmt"/>
-        <line num="34" count="27" type="stmt"/>
-        <line num="35" count="12" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="33" count="27" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="9" type="stmt"/>
+        <line num="35" count="27" type="stmt"/>
         <line num="36" count="12" type="stmt"/>
         <line num="37" count="12" type="stmt"/>
         <line num="38" count="12" type="stmt"/>
         <line num="39" count="12" type="stmt"/>
         <line num="40" count="12" type="stmt"/>
         <line num="41" count="12" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
+        <line num="42" count="12" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
         <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
       </file>
     </package>
   </project>

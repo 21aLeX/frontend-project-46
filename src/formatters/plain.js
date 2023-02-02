@@ -5,7 +5,7 @@ const getContent = (content) => {
   if (_.isObject(content)) {
     return '[complex value]';
   }
-  return _.isString(content) ? `'${content}'` : content;
+  return _.isString(content) ? `'${content}'` : String(content);
 };
 const plain = (value) => {
   const iter = (currentValue, way) => {
