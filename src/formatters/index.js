@@ -7,8 +7,9 @@ import stylish from './stylish.js';
 // конечно тоже работало, но было немного неудобно их оттуды вырезать, проверять..
 // поэтому переделала, предыдущее решение можно посмотреть в 2х предыдущих коммитах
 const formatters = { plain, stylish, json };
-export default (data, nameFormatter = 'stylish') => {
-  return formatters[nameFormatter]
-    ? formatters[nameFormatter](data)
-    : new Error(`Unknown format - ${nameFormatter}!`)
+export default (data, nameFormatter) => {
+  if (formatters[nameFormatter]) {
+    return formatters[nameFormatter](data)
+  }
+  throw new Error(`Unknown format - ${nameFormatter}!`)
 };

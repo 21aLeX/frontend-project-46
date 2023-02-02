@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>28/28</span>
+                <span class='fraction'>26/26</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/28</span>
+                <span class='fraction'>26/26</span>
             </div>
         
             
@@ -89,62 +89,56 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">72x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">72x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">72x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">72x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">126x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import _ from 'lodash';
-// code climate пишет о техническом долге в 2 дня, ссылается на непонятный файл
-// но думаю что это изза сортировки =(
-// нужно ли выносить функцию вычисления оличия в отдельный модуль?
-// Хотя в первых заданиях сказано чтоб много файлов не плодили.
 const getDifference = (obj1, obj2) =&gt; {
   const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
-  const result = keys.map((key) =&gt; {
+  const result = keys.reduce((acc, key) =&gt; {
     if (!_.has(obj1, key)) {
-      return [key, { type: 'added', value: obj2[key] }];
+      return { ...acc, [key]: { type: 'added', value: obj2[key] } };
     }
     if (!_.has(obj2, key)) {
-      return [key, { type: 'deleted', value: obj1[key] }];
+      return { ...acc, [key]: { type: 'deleted', value: obj1[key] } };
     }
-    if (_.isObject(obj1[key]) &amp;&amp; _.isObject(obj2[key])) {
-      return [
-        key,
-        { type: 'nested', children: getDifference(obj1[key], obj2[key]) },
-      ];
+    if (_.isPlainObject(obj1[key]) &amp;&amp; _.isPlainObject(obj2[key])) {
+      return {
+        ...acc, [key]:
+          { type: 'nested', children: getDifference(obj1[key], obj2[key]) },
+      };
     }
-    if (obj1[key] !== obj2[key]) {
-      return [key, { type: 'changed', value1: obj1[key], value2: obj2[key] }];
+    if (!_.isEqual(obj1[key], obj2[key])) {
+      return { ...acc, [key]: { type: 'changed', value1: obj1[key], value2: obj2[key] } };
     }
-    return [key, { type: 'unchanged', value: obj1[key] }];
-  });
-  return _.fromPairs(result);
+    return { ...acc, [key]: { type: 'unchanged', value: obj1[key] } };
+  }, {});
+  //почему нужно получить именно массив с объектами разной вложенности?
+  // почему для этого не подойдет обьект?
+  return result;
 };
 export default getDifference;
 &nbsp;</pre></td></tr></table></pre>
@@ -154,7 +148,7 @@ export default getDifference;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-01T16:23:21.980Z
+                at 2023-02-02T09:17:39.416Z
             </div>
         <script src="../prettify.js"></script>
         <script>
