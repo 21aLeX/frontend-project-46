@@ -3,7 +3,6 @@ install:
 publish:
 	npm publish --dry-run
 lint:
-	npm install --save-dev eslint-config-airbnb-base
 	npx eslint .
 test:
 	npm test
