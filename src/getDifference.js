@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+// а то что кодклимате ругается на сложность данной функции?
+// и на то что здесь много ретернов?
 const getDifference = (obj1, obj2) => {
   const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
   const result = keys.reduce((acc, key) => {
@@ -21,8 +23,6 @@ const getDifference = (obj1, obj2) => {
     }
     return { ...acc, [key]: { type: 'unchanged', value: obj1[key] } };
   }, {});
-  // почему нужно получить именно массив с объектами разной вложенности?
-  // почему для этого не подойдет обьект?
   return result;
 };
 export default getDifference;

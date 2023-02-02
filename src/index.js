@@ -1,19 +1,20 @@
 import { readFileSync } from 'fs';
-// а то что ана из пакета импортируется? Название лучше все равно менять?
-import * as getPatch from 'path';
+import path from 'path';
 import parse from './parse.js';
-import formatters from './formatters/index.js';
+import getFormatter from './formatters/index.js';
 import getDifference from './getDifference.js';
 
-const getContent = (path) => readFileSync(path, 'utf8');
-const getPath = (route) => getPatch.resolve(process.cwd(), '__fixtures__', route);
+const getContent = (route) => readFileSync(route, 'utf8');
+// а то что мы файлы все убрали в фикстуры и теперь вот
+// так красиво не сработет? -gendiff file1.json file2.json
+const getPath = (route) => path.resolve(process.cwd(), route);
 
 export default (route1, route2, nameFormatter = 'stylish') => {
-  const extname1 = getPatch.extname(route1);
-  const extname2 = getPatch.extname(route2);
-  const path1 = getPath(route1);
-  const path2 = getPath(route2);
-  const data1 = parse(getContent(path1), extname1);
-  const data2 = parse(getContent(path2), extname2);
-  return formatters(getDifference(data1, data2), nameFormatter);
+  const extname1 = path.extname(route1).slice(1);
+  const extname2 = path.extname(route2).slice(1);
+  const newRoute1 = getPath(route1);
+  const newRoute2 = getPath(route2);
+  const data1 = parse(getContent(newRoute1), extname1);
+  const data2 = parse(getContent(newRoute2), extname2);
+  return getFormatter(getDifference(data1, data2), nameFormatter);
 };
