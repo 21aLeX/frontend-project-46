@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675335227606" clover="3.2.0">
-  <project timestamp="1675335227606" name="All files">
-    <metrics statements="157" coveredstatements="157" conditionals="47" coveredconditionals="47" methods="13" coveredmethods="13" elements="217" coveredelements="217" complexity="0" loc="157" ncloc="157" packages="2" files="7" classes="7"/>
+<coverage generated="1675337849250" clover="3.2.0">
+  <project timestamp="1675337849250" name="All files">
+    <metrics statements="161" coveredstatements="161" conditionals="48" coveredconditionals="48" methods="13" coveredmethods="13" elements="222" coveredelements="222" complexity="0" loc="161" ncloc="161" packages="2" files="7" classes="7"/>
     <package name="src">
-      <metrics statements="56" coveredstatements="56" conditionals="18" coveredconditionals="18" methods="5" coveredmethods="5"/>
+      <metrics statements="60" coveredstatements="60" conditionals="19" coveredconditionals="19" methods="5" coveredmethods="5"/>
       <file name="getDifference.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/getDifference.js">
-        <metrics statements="26" coveredstatements="26" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
+        <metrics statements="28" coveredstatements="28" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="3" count="35" type="stmt"/>
-        <line num="4" count="35" type="cond" truecount="1" falsecount="0"/>
-        <line num="5" count="126" type="cond" truecount="1" falsecount="0"/>
-        <line num="6" count="35" type="stmt"/>
-        <line num="7" count="35" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="126" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="14" type="stmt"/>
-        <line num="10" count="14" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="126" type="cond" truecount="2" falsecount="0"/>
-        <line num="12" count="28" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="35" type="stmt"/>
+        <line num="5" count="35" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="126" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="35" type="stmt"/>
+        <line num="8" count="35" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="126" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="14" type="stmt"/>
+        <line num="11" count="14" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="126" type="cond" truecount="2" falsecount="0"/>
         <line num="13" count="28" type="stmt"/>
         <line num="14" count="28" type="stmt"/>
         <line num="15" count="28" type="stmt"/>
-        <line num="16" count="28" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="126" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="28" type="stmt"/>
-        <line num="19" count="28" type="cond" truecount="1" falsecount="0"/>
-        <line num="20" count="21" type="stmt"/>
-        <line num="21" count="35" type="stmt"/>
-        <line num="22" count="35" type="stmt"/>
+        <line num="16" count="28" type="stmt"/>
+        <line num="17" count="28" type="stmt"/>
+        <line num="18" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="126" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="28" type="stmt"/>
+        <line num="21" count="28" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="21" type="stmt"/>
         <line num="23" count="35" type="stmt"/>
         <line num="24" count="35" type="stmt"/>
         <line num="25" count="35" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="26" count="35" type="stmt"/>
+        <line num="27" count="35" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
       </file>
       <file name="index.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/index.js">
         <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
@@ -56,18 +58,20 @@
         <line num="19" count="8" type="stmt"/>
       </file>
       <file name="parse.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/parse.js">
-        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <metrics statements="13" coveredstatements="13" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="15" type="stmt"/>
-        <line num="5" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="16" type="stmt"/>
+        <line num="5" count="16" type="cond" truecount="1" falsecount="0"/>
         <line num="6" count="7" type="stmt"/>
-        <line num="7" count="15" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="16" type="cond" truecount="1" falsecount="0"/>
         <line num="9" count="8" type="stmt"/>
-        <line num="10" count="15" type="stmt"/>
-        <line num="11" count="15" type="stmt"/>
+        <line num="10" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="16" type="stmt"/>
+        <line num="13" count="16" type="stmt"/>
       </file>
     </package>
     <package name="src.formatters">

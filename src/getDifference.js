@@ -1,4 +1,5 @@
 import _ from 'lodash';
+
 const getDifference = (obj1, obj2) => {
   const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
   const result = keys.reduce((acc, key) => {
@@ -10,7 +11,8 @@ const getDifference = (obj1, obj2) => {
     }
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
       return {
-        ...acc, [key]:
+        ...acc,
+        [key]:
           { type: 'nested', children: getDifference(obj1[key], obj2[key]) },
       };
     }
@@ -19,7 +21,7 @@ const getDifference = (obj1, obj2) => {
     }
     return { ...acc, [key]: { type: 'unchanged', value: obj1[key] } };
   }, {});
-  //почему нужно получить именно массив с объектами разной вложенности?
+  // почему нужно получить именно массив с объектами разной вложенности?
   // почему для этого не подойдет обьект?
   return result;
 };

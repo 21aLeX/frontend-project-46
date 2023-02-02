@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-//а то что ана из пакета импортируется? Название лучше все равно менять?
+// а то что ана из пакета импортируется? Название лучше все равно менять?
 import * as getPatch from 'path';
 import parse from './parse.js';
 import formatters from './formatters/index.js';

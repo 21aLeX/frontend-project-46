@@ -9,18 +9,28 @@ const getFixture = (nameFile) => getPatch.join(__dirname, '..', '__fixtures__', 
 const getCorrectResult = (file) => readFileSync(file, 'utf8').replace(/\r/g, '');
 
 test.each([
-  { f1: 'file1.json', f2: 'file2.yml', r: 'result.stylish.txt', },
-  { f1: 'file1.json', f2: 'file2.yaml', form: 'plain', r: 'result.plain.txt', },
-  { f1: 'file1.json', f2: 'file2.yml', form: 'json', r: 'result.json.txt', },
-  { f1: 'file1.yml', f2: 'file2.yaml', r: 'result.stylish.txt', },
-  { f1: 'file1.json', f2: 'file2.json', form: 'plain', r: 'result.plain.txt', },
-  { f1: 'file1.yml', f2: 'file2.yml', form: 'json', r: 'result.json.txt', },
-])('diff($f1, $f2)', ({ f1, f2, form, r }) => {
+  { f1: 'file1.json', f2: 'file2.yml', r: 'result.stylish.txt' },
+  {
+    f1: 'file1.json', f2: 'file2.yaml', form: 'plain', r: 'result.plain.txt',
+  },
+  {
+    f1: 'file1.json', f2: 'file2.yml', form: 'json', r: 'result.json.txt',
+  },
+  { f1: 'file1.yml', f2: 'file2.yaml', r: 'result.stylish.txt' },
+  {
+    f1: 'file1.json', f2: 'file2.json', form: 'plain', r: 'result.plain.txt',
+  },
+  {
+    f1: 'file1.yml', f2: 'file2.yml', form: 'json', r: 'result.json.txt',
+  },
+])('diff($f1, $f2)', ({
+  f1, f2, form, r,
+}) => {
   expect(genDiff(getFixture(f1), getFixture(f2), form)).toBe(getCorrectResult(getFixture(r)));
 });
 test.failing.each([
-  { f1: 'file1.json', f2: 'file2.rer' },
+  { f1: 'file1.json', f2: 'file2.txt' },
   { f1: 'file1.json', f2: 'file2.yaml', form: 'jso' },
 ])('failing diff($f1, $f2)', ({ f1, f2, form }) => {
-  expect( genDiff(getFixture(f1), getFixture(f2), form) ).toThrow();
+  expect(genDiff(getFixture(f1), getFixture(f2), form)).toThrow();
 });
