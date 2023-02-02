@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675329459438" clover="3.2.0">
-  <project timestamp="1675329459439" name="All files">
-    <metrics statements="158" coveredstatements="158" conditionals="47" coveredconditionals="47" methods="13" coveredmethods="13" elements="218" coveredelements="218" complexity="0" loc="158" ncloc="158" packages="2" files="7" classes="7"/>
+<coverage generated="1675335227606" clover="3.2.0">
+  <project timestamp="1675335227606" name="All files">
+    <metrics statements="157" coveredstatements="157" conditionals="47" coveredconditionals="47" methods="13" coveredmethods="13" elements="217" coveredelements="217" complexity="0" loc="157" ncloc="157" packages="2" files="7" classes="7"/>
     <package name="src">
-      <metrics statements="57" coveredstatements="57" conditionals="18" coveredconditionals="18" methods="5" coveredmethods="5"/>
+      <metrics statements="56" coveredstatements="56" conditionals="18" coveredconditionals="18" methods="5" coveredmethods="5"/>
       <file name="getDifference.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/getDifference.js">
         <metrics statements="26" coveredstatements="26" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -46,29 +46,28 @@
         <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="7" type="stmt"/>
-        <line num="13" count="7" type="stmt"/>
-        <line num="14" count="7" type="stmt"/>
-        <line num="15" count="7" type="stmt"/>
-        <line num="16" count="7" type="stmt"/>
-        <line num="17" count="7" type="stmt"/>
-        <line num="18" count="7" type="stmt"/>
-        <line num="19" count="7" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
       </file>
       <file name="parse.js" path="/home/alex/project/hexlet-project/frontend-project-46/src/parse.js">
-        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="14" type="stmt"/>
-        <line num="5" count="14" type="stmt"/>
-        <line num="6" count="14" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="6" type="stmt"/>
-        <line num="8" count="14" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="14" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="14" type="stmt"/>
-        <line num="12" count="14" type="stmt"/>
+        <line num="4" count="15" type="stmt"/>
+        <line num="5" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="15" type="stmt"/>
+        <line num="11" count="15" type="stmt"/>
       </file>
     </package>
     <package name="src.formatters">
