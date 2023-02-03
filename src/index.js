@@ -5,8 +5,6 @@ import getFormatter from './formatters/index.js';
 import getDifference from './getDifference.js';
 
 const getContent = (route) => readFileSync(route, 'utf8');
-// а то что мы файлы все убрали в фикстуры и теперь вот
-// так красиво не сработет? -gendiff file1.json file2.json
 const getPath = (route) => path.resolve(process.cwd(), route);
 
 export default (route1, route2, nameFormatter = 'stylish') => {

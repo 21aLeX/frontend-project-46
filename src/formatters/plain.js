@@ -1,6 +1,5 @@
 import _ from 'lodash';
 
-// отдельная функция для получения контента в нужном формате
 const getContent = (content) => {
   if (_.isObject(content)) {
     return '[complex value]';

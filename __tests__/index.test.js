@@ -30,8 +30,8 @@ test.each([
     .toBe(getCorrectResult(getFixture(result)));
 });
 test.each([
-  { f1: 'file1.json', f2: 'file2.txt' },
-  { f1: 'file1.json', f2: 'file2.yaml', form: 'jso' },
-])('failing diff($f1, $f2)', ({ f1, f2, form }) => {
-  expect(() => { genDiff(getFixture(f1), getFixture(f2), form); }).toThrow();
+  { file1: 'file1.json', file2: 'file2.txt' },
+  { file1: 'file1.json', file2: 'file2.yaml', form: 'jso' },
+])('failing diff($f1, $f2)', ({ file1, file2, form }) => {
+  expect(() => { genDiff(getFixture(file1), getFixture(file2), form); }).toThrow();
 });

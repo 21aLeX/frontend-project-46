@@ -1,7 +1,5 @@
 import _ from 'lodash';
 
-// а то что кодклимате ругается на сложность данной функции?
-// и на то что здесь много ретернов?
 const getDifference = (obj1, obj2) => {
   const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
   const result = keys.reduce((acc, key) => {
